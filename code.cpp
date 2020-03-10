@@ -97,3 +97,30 @@ int main()
 	return 0;
 
 }
+int qxys, zlys, tlys, q, w, e;
+	qxys = ad % 28;
+	zlys = ad % 33;
+	tlys = ad % 23;
+
+if (tlys >= 12)  //体力
+	{
+		if (tlys == 12)
+			printf("您在%d年%d月%d日这天，体力刚好处于临界期\n", year, month, day);
+		else
+		{
+			e = tlys - 12;
+			printf("您在%d年%d月%d日这天，体力处于低潮日的第%d天\n", year, month, day, e);
+		}
+		
+	}
+	else
+	{
+		if (tlys == 0)
+			printf("您在%d年%d月%d日这天，体力刚好处于周期日\n", year, month, day);
+		else
+			printf("您在%d年%d月%d日这天,体力处于高潮日的第%d天\n", year, month, day, tlys);
+	}
+	system("pause");
+	return 0;
+
+}
