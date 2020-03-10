@@ -89,20 +89,73 @@ int main()
 		case 11: ce = 304 + day;break;
 		case 12: ce = 334 + day;break;
 		default:printf("请输入正确月份");
+				}
+	}
+	else
+	{
+		switch (month)
+		{
+		case 1: ce = day;break;
+		case 2: ce = 31 + day;break;
+		case 3: ce = 59 + day;break;
+		case 4:ce = 90 + day;break;
+		case 5: ce = 120 + day;break;
+		case 6:ce = 151 + day;break;
+		case 7: ce = 181 + day;break;
+		case 8: ce = 212 + day;break;
+		case 9:ce = 243 + day;break;
+		case 10: ce = 273 + day;break;
+		case 11: ce = 304 + day;break;
+		case 12: ce = 334 + day;break;
+		default:printf("请输入正确月份");
 		}
 	}
 	ad = (year - chusyear) * 365 + rns - sheng + ce;
-	printf("%d ",ad);
-	system("pause");
-	return 0;
+	
 
-}
-int qxys, zlys, tlys, q, w, e;
+	int qxys, zlys, tlys, q, w, e;
 	qxys = ad % 28;
 	zlys = ad % 33;
 	tlys = ad % 23;
 
-if (tlys >= 12)  //体力
+	if (qxys >= 14)   //情绪
+	{
+		if (qxys == 14)
+			printf("您在%d年%d月%d日这天，情绪刚好处于临界期\n", year, month, day);
+		else
+		{
+			q = qxys - 14;
+			printf("您在%d年%d月%d日这天，情绪处于低潮日的第%d天\n", year, month, day, q);
+		}
+		
+	}
+	else
+	{
+		if (qxys == 0)
+			printf("您在%d年%d月%d日这天，情绪刚好处于周期日\n", year, month, day);
+		else
+			printf("您在%d年%d月%d日这天,情绪处于高潮日的第%d天\n", year, month, day, qxys);
+	}
+
+	if (zlys >= 17)  //智力
+	{
+		if (zlys == 17)
+			printf("您在%d年%d月%d日这天，智力刚好处于临界期\n", year, month, day);
+		else
+		{
+			w = zlys - 17;
+			printf("您在%d年%d月%d日这天，智力处于低潮日的第%d天\n", year, month, day, w);
+		}
+		
+	}
+	else
+	{
+		if (zlys == 0)
+			printf("您在%d年%d月%d日这天，智力刚好处于周期日\n", year, month, day);
+		else
+			printf("您在%d年%d月%d日这天,智力处于高潮日的第%d天\n", year,month, day, zlys);
+	}
+	if (tlys >= 12)  //体力
 	{
 		if (tlys == 12)
 			printf("您在%d年%d月%d日这天，体力刚好处于临界期\n", year, month, day);
