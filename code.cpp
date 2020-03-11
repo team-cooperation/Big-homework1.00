@@ -175,5 +175,15 @@ int main()
 	}
 	system("pause");
 	return 0;
+		getchar();
+		printf("是否再次测试？(y是，n否)\n");
+		char z;
+		scanf_s("%c",&z);
+		getchar();
+		if (z == 'n') break;
+		else system("cls");
+	}
+	system("pause");
+	return 0;
 
 }
